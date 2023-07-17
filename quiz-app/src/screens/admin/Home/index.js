@@ -57,7 +57,7 @@ const Home = () => {
             colorClass={GLOBALS.COLOR_CLASSES.NEUTRAL["0"]}
             type={textTypes.HEADING.XL}
           >
-            Designatesss a participant to take a quiz
+            Designate a participant to take a quiz
           </Text>
         </div>
 

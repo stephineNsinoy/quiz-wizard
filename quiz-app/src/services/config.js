@@ -1,6 +1,6 @@
 import { isLocal } from "../utils/destinations";
 
-let apiUrl = null;
+let apiUrl = "https://quizwizardapi.azurewebsites.net";
 
 if (isLocal) {
   apiUrl = "https://localhost:7137";
