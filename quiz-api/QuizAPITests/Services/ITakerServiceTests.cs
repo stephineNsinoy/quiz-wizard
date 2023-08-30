@@ -16,14 +16,12 @@ namespace QuizAPITests.Services
         private readonly ITakerService _TakerService;
         private readonly Mock<ITakerRepository> _fakeTakerRepository;
         private readonly Mock<IMapper> _fakeMapper;
-        private readonly Mock<IConfiguration> _fakeConfiguration;
 
         public ITakerServiceTests()
         {
             _fakeTakerRepository = new Mock<ITakerRepository>();
             _fakeMapper = new Mock<IMapper>();
-            _fakeConfiguration = new Mock<IConfiguration>();
-            _TakerService = new TakerService(_fakeTakerRepository.Object, _fakeConfiguration.Object, _fakeMapper.Object);
+            _TakerService = new TakerService(_fakeTakerRepository.Object, _fakeMapper.Object);
         }
 
         //CreateTaker returns TakerDto
