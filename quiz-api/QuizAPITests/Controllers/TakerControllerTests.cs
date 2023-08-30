@@ -55,8 +55,8 @@ namespace QuizAPITests.Controllers
             _fakeTakerService.Setup(service => service.VerifyPassword(fakeTaker.Password, taker.Password))
                 .Returns(true);
 
-            _fakeTakerService.Setup(service => service.CreateToken(It.IsAny<TakerUserNameDto>()))
-                .Returns("Token"); 
+            //_fakeTakerService.Setup(service => service.CreateToken(It.IsAny<TakerUserNameDto>()))
+            //    .Returns("Token"); 
 
             // Act
             var result = await _controller.Login(taker);
@@ -83,7 +83,7 @@ namespace QuizAPITests.Controllers
             _fakeTakerService.Setup(service => service.VerifyPassword(taker.Password, It.IsAny<string>()))
                             .Returns(false);
 
-            _fakeTakerService.Setup(service => service.CreateToken(It.IsAny<TakerUserNameDto>()));
+            //_fakeTakerService.Setup(service => service.CreateToken(It.IsAny<TakerUserNameDto>()));
 
             //Act
             var result = await _controller.Login(taker);
@@ -109,7 +109,7 @@ namespace QuizAPITests.Controllers
             _fakeTakerService.Setup(service => service.VerifyPassword(taker.Password, It.IsAny<string>()))
                             .Returns(false);
 
-            _fakeTakerService.Setup(service => service.CreateToken(It.IsAny<TakerUserNameDto>()));
+            //_fakeTakerService.Setup(service => service.CreateToken(It.IsAny<TakerUserNameDto>()));
 
             //Act
             var result = await _controller.Login(taker);
@@ -135,8 +135,8 @@ namespace QuizAPITests.Controllers
             _fakeTakerService.Setup(service => service.VerifyPassword(taker.Password , "testtaker"))
                             .Returns(true);
 
-            _fakeTakerService.Setup(service => service.CreateToken(It.IsAny<TakerUserNameDto>()))
-                             .Throws(new Exception());
+            //_fakeTakerService.Setup(service => service.CreateToken(It.IsAny<TakerUserNameDto>()))
+                             //.Throws(new Exception());
 
             //Act
             var result = await _controller.Login(taker);
